@@ -1,0 +1,32 @@
+.body {
+  background: black;
+}
+.hill{
+  display:flex;
+  justify-content: space-around;
+  
+  
+}
+
+.Container  {
+  display : flex;
+  border: 1px solid black;
+  width: 600px;
+  padding: 10px 20px 60px 10px ;
+  background: white;
+}
+.react-picture{
+  width: 100%;
+}
+spang{
+  font-size:12px;
+  font-weight:none;
+}
+ 
+.bottom-section{
+  border: 1px solid black;
+  margin-top: 0px;
+}
+.bottom-text {
+  padding: 10px;
+}

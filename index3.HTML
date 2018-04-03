@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .button-styles {
+            color: #e3e3e3;
+            background: #222;
+            border: none;
+        }
+
+        .bg-button-red {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="target"></div>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+
+    <script type="text/babel">
+    const handleClick = () => {
+      alert('clicked');
+    };
+
+    const BasicButton = props => {
+      console.log('Button props', props);
+      return (
+        <button 
+          onClick={() => handleClick()} 
+          className={`button-styles ${props.bgColor}`}>{props.text}
+        </button>
+      );
+    };
+    
+    BasicButton.defaultProps = {
+      text: 'Click Me'
+    };
+
+    console.log(<BasicButton />);
+
+    const BasicInput = () => {
+      return (
+        <input type="text" placeholder="React JS"/>
+      );
+    };
+
+    const BasicHeader = () => {
+      return (
+        <h1>Let's compose an App with components!</h1>
+      );
+    };
+
+    const App = () => { 
+      return (
+        <div> 
+          <BasicHeader />
+          <BasicInput />
+          <BasicButton bgColor='bg-button-red' text="Clicky" foo="bar" />
+          <BasicButton text="Charles" />
+          <BasicButton text="In" />
+          <BasicButton bgColor='bg-button-red' text="Charge" />
+          <BasicButton bgColor='bg-button-red' text="Of" />
+          <BasicButton text="Our" />
+          <BasicButton text="Days" />
+          <BasicButton />
+        </div>
+      );
+    };
+    ReactDOM.render(<App />, document.getElementById('target'));
+  </script>
+</body>
+
+</html>
